@@ -4,7 +4,7 @@ import path from "path";
 const ROOT = process.cwd();
 const OUTPUT = path.join(ROOT, "tracks.json");
 
-const audioExts = new Set([".mp3", ".m4a", ".wav", ".ogg"]);
+const audioExts = new Set([".mp3", ".m4a", ".wav", ".ogg", ".aac", ".flac"]);
 const imageExts = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
 const excludedDirs = new Set([
@@ -84,7 +84,7 @@ function findCover(audioFile) {
     }
   }
 
-  // 3. 最後找整個 REPO 裡任意位置的同名圖片
+  // 3. 最後找整個 repo 裡任意位置的同名圖片
   for (const img of imageFiles) {
     if (img.baseName === audioBaseName) {
       return img.relativePath;
@@ -96,7 +96,6 @@ function findCover(audioFile) {
 
 const audioFiles = allFiles
   .filter(file => audioExts.has(path.extname(file).toLowerCase()))
-  .filter(file => path.basename(file) !== "tracks.json")
   .sort((a, b) => {
     const ar = toPosix(path.relative(ROOT, a));
     const br = toPosix(path.relative(ROOT, b));
@@ -106,9 +105,13 @@ const audioFiles = allFiles
 const tracks = audioFiles.map(file => {
   const relativePath = toPosix(path.relative(ROOT, file));
   const filename = path.basename(file);
+  const display = cleanTitle(filename);
 
   return {
-    title: cleanTitle(filename),
+    title: filename,
+    display: display,
+    category: "music",
+    file: relativePath,
     src: relativePath,
     cover: findCover(file)
   };
