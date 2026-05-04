@@ -1,0 +1,37 @@
+name: Update tracks.json
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "MP3/**"
+      - "images/**"
+      - "scripts/generate-tracks.mjs"
+      - ".github/workflows/update-tracks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-tracks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate tracks.json
+        run: node scripts/generate-tracks.mjs
+
+      - name: Commit updated tracks.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Auto update tracks.json
+          file_pattern: tracks.json
