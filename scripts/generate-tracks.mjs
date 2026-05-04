@@ -48,6 +48,23 @@ function cleanTitle(filename) {
     .trim();
 }
 
+function getCategory(relativePath) {
+  const parts = relativePath.split("/");
+
+  // 放在 music 資料夾，播放器顯示 music
+  if (parts[0] === "music") {
+    return "music";
+  }
+
+  // 放在 MP3 資料夾，播放器顯示 講經
+  if (parts[0] === "MP3") {
+    return "講經";
+  }
+
+  // 其他資料夾，先顯示第一層資料夾名稱，避免空白
+  return parts[0] || "其他";
+}
+
 const allFiles = walk(ROOT);
 
 const imageFiles = allFiles
@@ -110,7 +127,7 @@ const tracks = audioFiles.map(file => {
   return {
     title: filename,
     display: display,
-    category: "music",
+    category: getCategory(relativePath),
     file: relativePath,
     src: relativePath,
     cover: findCover(file)
