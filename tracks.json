@@ -1,122 +1,132 @@
 [
   {
+    "title": "BMD0328 望夫石",
+    "src": "MP3/BMD0328_望夫石.mp3",
+    "cover": ""
+  },
+  {
     "title": "CD CL01-01871 認識本性才能真快樂",
-    "artist": "清海無上師",
-    "file": "CD CL01-01871 認識本性才能真快樂"
+    "src": "MP3/CD CL01-01871 認識本性才能真快樂.mp3",
+    "cover": "images/CD CL01-01871 認識本性才能真快樂.jpg"
   },
   {
     "title": "CD CL02-01873 反聞聞自性的真義",
-    "artist": "清海無上師",
-    "file": "CD CL02-01873 反聞聞自性的真義"
+    "src": "MP3/CD CL02-01873 反聞聞自性的真義.mp3",
+    "cover": "images/CD CL02-01873 反聞聞自性的真義.jpg"
   },
   {
     "title": "MP3 CL01-00451 師父不屬於任何宗教",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00451 師父不屬於任何宗教"
+    "src": "MP3/MP3 CL01-00451 師父不屬於任何宗教.MP3",
+    "cover": "images/MP3 CL01-00451 師父不屬於任何宗教.jpg"
   },
   {
     "title": "MP3 CL01-00452 師父到底屬於哪個宗教",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00452 師父到底屬於哪個宗教"
+    "src": "MP3/MP3 CL01-00452 師父到底屬於哪個宗教.MP3",
+    "cover": "images/MP3 CL01-00452 師父到底屬於哪個宗教.jpg"
   },
   {
     "title": "MP3 CL01-00462 長生不老可能嗎",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00462 長生不老可能嗎"
+    "src": "MP3/MP3 CL01-00462 長生不老可能嗎.MP3",
+    "cover": "images/MP3 CL01-00462 長生不老可能嗎.jpg"
   },
   {
     "title": "MP3 CL01-00463 宗教之間為何互相毀謗",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00463 宗教之間為何互相毀謗"
+    "src": "MP3/MP3 CL01-00463 宗教之間為何互相毀謗.MP3",
+    "cover": "images/MP3 CL01-00463 宗教之間為何互相毀謗.jpg"
   },
   {
     "title": "MP3 CL01-00464 何以自古以來明師命如懸絲",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00464 何以自古以來明師命如懸絲"
+    "src": "MP3/MP3 CL01-00464 何以自古以來明師命如懸絲.MP3",
+    "cover": "images/MP3 CL01-00464 何以自古以來明師命如懸絲.jpg"
   },
   {
     "title": "MP3 CL01-00465 師父的布施法-分享的心",
-    "artist": "清海無上師",
-    "file": "MP3 CL01-00465 師父的布施法-分享的心"
+    "src": "MP3/MP3 CL01-00465 師父的布施法-分享的心.MP3",
+    "cover": "images/MP3 CL01-00465 師父的布施法-分享的心.jpg"
   },
   {
     "title": "MP3 CL02-00474 博納兒的故事",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00474 博納兒的故事"
+    "src": "MP3/MP3 CL02-00474 博納兒的故事.mp3",
+    "cover": "images/MP3 CL02-00474 博納兒的故事.jpg"
   },
   {
     "title": "MP3 CL02-00475 令人解脫是明師唯一的責任",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00475 令人解脫是明師唯一的責任 "
+    "src": "MP3/MP3 CL02-00475 令人解脫是明師唯一的責任 .MP3",
+    "cover": "images/MP3 CL02-00475 令人解脫是明師唯一的責任 .jpg"
   },
   {
     "title": "MP3 CL02-00476 觀音法門與神通有何不同",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00476 觀音法門與神通有何不同"
+    "src": "MP3/MP3 CL02-00476 觀音法門與神通有何不同.mp3",
+    "cover": "images/MP3 CL02-00476 觀音法門與神通有何不同.jpg"
   },
   {
     "title": "MP3 CL02-00482 佛是一個最高的理想",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00482 佛是一個最高的理想"
+    "src": "MP3/MP3 CL02-00482 佛是一個最高的理想.mp3",
+    "cover": "images/MP3 CL02-00482 佛是一個最高的理想.jpg"
   },
   {
     "title": "MP3 CL02-00483 如何選擇死後快樂的境界",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00483 如何選擇死後快樂的境界"
+    "src": "MP3/MP3 CL02-00483 如何選擇死後快樂的境界.mp3",
+    "cover": "images/MP3 CL02-00483 如何選擇死後快樂的境界.jpg"
   },
   {
     "title": "MP3 CL02-00484 未入觀音法門的修行方法",
-    "artist": "清海無上師",
-    "file": "MP3 CL02-00484 未入觀音法門的修行方法"
+    "src": "MP3/MP3 CL02-00484 未入觀音法門的修行方法.mp3",
+    "cover": "images/MP3 CL02-00484 未入觀音法門的修行方法.jpg"
   },
   {
     "title": "MP3 CL03-00492 修觀音法門應具高等勇氣",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00492 修觀音法門應具高等勇氣"
+    "src": "MP3/MP3 CL03-00492 修觀音法門應具高等勇氣.mp3",
+    "cover": "images/MP3 CL03-00492 修觀音法門應具高等勇氣.jpg"
   },
   {
     "title": "MP3 CL03-00493 身口意的修行法",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00493 身口意的修行法"
+    "src": "MP3/MP3 CL03-00493 身口意的修行法.MP3",
+    "cover": "images/MP3 CL03-00493 身口意的修行法.jpg"
   },
   {
     "title": "MP3 CL03-00494 超世界的修行法",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00494 超世界的修行法 "
+    "src": "MP3/MP3 CL03-00494 超世界的修行法 .mp3",
+    "cover": ""
   },
   {
     "title": "MP3 CL03-00501 高速公路法門",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00501 高速公路法門"
+    "src": "MP3/MP3 CL03-00501 高速公路法門.MP3",
+    "cover": "images/MP3 CL03-00501 高速公路法門.jpg"
   },
   {
     "title": "MP3 CL03-00502 什麼是魔王的陷阱",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00502 什麼是魔王的陷阱"
+    "src": "MP3/MP3 CL03-00502 什麼是魔王的陷阱.MP3",
+    "cover": "images/MP3 CL03-00502 什麼是魔王的陷阱.jpg"
   },
   {
     "title": "MP3 CL03-00503 名利心是修行的大障礙",
-    "artist": "清海無上師",
-    "file": "MP3 CL03-00503 名利心是修行的大障礙"
+    "src": "MP3/MP3 CL03-00503 名利心是修行的大障礙.MP3",
+    "cover": "images/MP3 CL03-00503 名利心是修行的大障礙.jpg"
   },
   {
     "title": "MP3 CL04-00522 認識內在真人的祕法",
-    "artist": "清海無上師",
-    "file": "MP3 CL04-00522 認識內在真人的祕法"
+    "src": "MP3/MP3 CL04-00522 認識內在真人的祕法.MP3",
+    "cover": "images/MP3 CL04-00522 認識內在真人的祕法.jpg"
   },
   {
     "title": "MP3 CL04-00523出家生活所具的意義",
-    "artist": "清海無上師",
-    "file": "MP3 CL04-00523出家生活所具的意義"
+    "src": "MP3/MP3 CL04-00523出家生活所具的意義.MP3",
+    "cover": "images/MP3 CL04-00523出家生活所具的意義.jpg"
   },
   {
     "title": "MP3 CL04-00524 布施法是最高功德",
-    "artist": "清海無上師",
-    "file": "MP3 CL04-00524 布施法是最高功德"
+    "src": "MP3/MP3 CL04-00524 布施法是最高功德.mp3",
+    "cover": "images/MP3 CL04-00524 布施法是最高功德.jpg"
   },
   {
     "title": "MP3 CL04-00525長壽的秘法",
-    "artist": "清海無上師",
-    "file": "MP3 CL04-00525長壽的秘法"
+    "src": "MP3/MP3 CL04-00525長壽的秘法.MP3",
+    "cover": "images/MP3 CL04-00525長壽的秘法.jpg"
+  },
+  {
+    "title": "O Cuoi - Supreme Master Ching Hai Le Thuong - YouTube",
+    "src": "MP3/O Cuoi - Supreme Master Ching Hai   Le Thuong - YouTube.mp3",
+    "cover": ""
   }
 ]
