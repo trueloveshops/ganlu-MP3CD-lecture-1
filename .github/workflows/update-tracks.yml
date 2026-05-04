@@ -5,8 +5,14 @@ on:
     branches:
       - main
     paths:
-      - "MP3/**"
-      - "images/**"
+      - "**.mp3"
+      - "**.m4a"
+      - "**.wav"
+      - "**.ogg"
+      - "**.jpg"
+      - "**.jpeg"
+      - "**.png"
+      - "**.webp"
       - "scripts/generate-tracks.mjs"
       - ".github/workflows/update-tracks.yml"
   workflow_dispatch:

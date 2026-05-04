@@ -2,12 +2,17 @@ import fs from "fs";
 import path from "path";
 
 const ROOT = process.cwd();
-const MP3_DIR = path.join(ROOT, "MP3");
-const IMAGES_DIR = path.join(ROOT, "images");
 const OUTPUT = path.join(ROOT, "tracks.json");
 
-const audioExts = new Set([".mp3", ".m4a", ".wav", ".ogg"]);
-const imageExts = [".jpg", ".jpeg", ".png", ".webp"];
+const audioExts = new Set([".mp3", ".m4a", ".wav", ".ogg", ".aac", ".flac"]);
+const imageExts = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+
+const excludedDirs = new Set([
+  ".git",
+  ".github",
+  "scripts",
+  "node_modules"
+]);
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -15,6 +20,10 @@ function walk(dir) {
   const results = [];
 
   for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (item.isDirectory() && excludedDirs.has(item.name)) {
+      continue;
+    }
+
     const fullPath = path.join(dir, item.name);
 
     if (item.isDirectory()) {
@@ -39,52 +48,72 @@ function cleanTitle(filename) {
     .trim();
 }
 
-function findCover(audioRelativePath) {
-  const audioParsed = path.parse(audioRelativePath);
+const allFiles = walk(ROOT);
+
+const imageFiles = allFiles
+  .filter(file => imageExts.has(path.extname(file).toLowerCase()))
+  .map(file => ({
+    fullPath: file,
+    relativePath: toPosix(path.relative(ROOT, file)),
+    baseName: path.parse(file).name
+  }));
+
+function findCover(audioFile) {
+  const audioParsed = path.parse(audioFile);
   const audioBaseName = audioParsed.name;
+  const audioDir = audioParsed.dir;
 
-  const possibleCovers = [];
-
-  // 方案 1：images 資料夾裡有同名圖片
-  for (const ext of imageExts) {
-    possibleCovers.push(path.join("images", `${audioBaseName}${ext}`));
-  }
-
-  // 方案 2：images 裡有相同子資料夾 + 同名圖片
-  const audioSubDir = audioParsed.dir.replace(/^MP3[\\/]?/, "");
-  if (audioSubDir) {
-    for (const ext of imageExts) {
-      possibleCovers.push(path.join("images", audioSubDir, `${audioBaseName}${ext}`));
+  // 1. 優先找音樂同資料夾的同名圖片
+  for (const img of imageFiles) {
+    if (
+      img.baseName === audioBaseName &&
+      path.dirname(img.fullPath) === audioDir
+    ) {
+      return img.relativePath;
     }
   }
 
-  // 方案 3：MP3 同資料夾裡放同名圖片
-  for (const ext of imageExts) {
-    possibleCovers.push(path.join(audioParsed.dir, `${audioBaseName}${ext}`));
+  // 2. 再找 images 資料夾裡的同名圖片
+  for (const img of imageFiles) {
+    const parts = img.relativePath.split("/");
+    if (
+      img.baseName === audioBaseName &&
+      parts.includes("images")
+    ) {
+      return img.relativePath;
+    }
   }
 
-  for (const cover of possibleCovers) {
-    const fullCoverPath = path.join(ROOT, cover);
-    if (fs.existsSync(fullCoverPath)) {
-      return toPosix(cover);
+  // 3. 最後找整個 repo 裡任意位置的同名圖片
+  for (const img of imageFiles) {
+    if (img.baseName === audioBaseName) {
+      return img.relativePath;
     }
   }
 
   return "";
 }
 
-const audioFiles = walk(MP3_DIR)
+const audioFiles = allFiles
   .filter(file => audioExts.has(path.extname(file).toLowerCase()))
-  .sort((a, b) => a.localeCompare(b, "zh-Hant"));
+  .sort((a, b) => {
+    const ar = toPosix(path.relative(ROOT, a));
+    const br = toPosix(path.relative(ROOT, b));
+    return ar.localeCompare(br, "zh-Hant");
+  });
 
 const tracks = audioFiles.map(file => {
   const relativePath = toPosix(path.relative(ROOT, file));
   const filename = path.basename(file);
+  const display = cleanTitle(filename);
 
   return {
-    title: cleanTitle(filename),
+    title: filename,
+    display: display,
+    category: "music",
+    file: relativePath,
     src: relativePath,
-    cover: findCover(relativePath)
+    cover: findCover(file)
   };
 });
 
